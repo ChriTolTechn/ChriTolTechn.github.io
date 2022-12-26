@@ -1,6 +1,5 @@
 import { ethers } from '../modules/ethers/dist/ethers.esm.min.js';
 const metamaskProvider = new ethers.providers.Web3Provider(window.ethereum);
-const rpcProvider = new ethers.providers.JsonRpcProvider("https://eth-goerli.g.alchemy.com/v2/zUOydiqRKAPMR39RIqcefp6DfpFrP0k-");
 
 (async () => {
     await main();
@@ -8,13 +7,16 @@ const rpcProvider = new ethers.providers.JsonRpcProvider("https://eth-goerli.g.a
 
 async function main(){
     await metamaskProvider.send("eth_requestAccounts", []);
-    const metamaskSigner = metamaskProvider.getSigner()
 }
 
 async function getCurrentBlockNumber(){
-    return await rpcProvider.getBlockNumber()
+    return await metamaskProvider.getBlockNumber()
 }
 
 document.getElementById("currentBlockButton").onclick = async function() {
+    document.getElementById("currentBlockText").style.display= 'none' ;
+    document.getElementById('currentBlockLoading').style.display= 'block' ;
     document.getElementById("currentBlockText").innerHTML = await getCurrentBlockNumber();
+    document.getElementById("currentBlockText").style.display= 'block' ;
+    document.getElementById('currentBlockLoading').style.display= 'none' ;
 };
