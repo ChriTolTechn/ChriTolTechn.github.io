@@ -1,4 +1,4 @@
-import { ethers } from "../node_modules/ethers/dist/ethers.esm.js";
+import { ethers } from "../node_modules/ethers/dist/ethers.esm.min.js";
 const metamaskProvider = new ethers.providers.Web3Provider(window.ethereum);
 const rpcProvider = new ethers.providers.JsonRpcProvider("https://eth-goerli.g.alchemy.com/v2/zUOydiqRKAPMR39RIqcefp6DfpFrP0k-");
 
