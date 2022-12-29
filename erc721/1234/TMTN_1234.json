@@ -1,0 +1,12 @@
+{
+  "description": "Tomato 1234, the best one of them all", 
+  "external_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 
+  "image": "https://chritoltechn.github.io/erc721/1234/TMTN_1234.png", 
+  "name": "Tomato 1234",
+  "attributes": [ 
+	{
+		"trait_type": "Type",
+		"value": "Beefsteak Tomato"
+	}
+ ]
+}
